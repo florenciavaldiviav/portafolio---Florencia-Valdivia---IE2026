@@ -1,0 +1,342 @@
+/* =========================================================
+   ESTILOS GENERALES Y VARIABLES (Verde / Rosado / Camo)
+   ========================================================= */
+:root {
+  --color-rosa-vibrante: #ff66b2;
+  --color-rosa-pastel: #f7a8b8;
+  --color-verde-musgo: #2b3a27;
+  --color-verde-oliva: #4d6639;
+  --color-negro: #121411;
+  --color-blanco: #f4f6f3;
+  --fuente-principal: 'Alegreya Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--color-negro);
+  color: var(--color-blanco);
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.6;
+}
+
+/* Textura de fondo tipo Camuflaje/Ramaje vegetal mediante SVG en Data-URI */
+.camo-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: radial-gradient(var(--color-verde-musgo) 15%, transparent 16%),
+                    radial-gradient(var(--color-rosa-vibrante) 15%, transparent 16%),
+                    linear-gradient(45deg, rgba(43, 58, 39, 0.4) 25%, transparent 25%),
+                    linear-gradient(-45deg, rgba(255, 102, 178, 0.2) 25%, transparent 25%);
+  background-size: 60px 60px, 80px 80px, 120px 120px, 100px 100px;
+  background-position: 0 0, 30px 30px, 0 0, 40px 40px;
+  opacity: 0.25;
+  z-index: -1;
+  pointer-events: none;
+  filter: contrast(130%);
+}
+
+/* =========================================================
+   1. NAVEGACIÓN (HEADER)
+   ========================================================= */
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  background: rgba(18, 20, 17, 0.85);
+  backdrop-filter: blur(10px); /* Propiedad 1: backdrop-filter */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid var(--color-rosa-vibrante);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-rosa-vibrante);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.header-nav nav a {
+  color: var(--color-blanco);
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  transition: color 0.3s ease, transform 0.3s ease; /* Propiedad 2: transition */
+  display: inline-block;
+}
+
+.header-nav nav a:hover {
+  color: var(--color-rosa-pastel);
+  transform: translateY(-2px); /* Propiedad 3: transform */
+}
+
+/* =========================================================
+   2. HERO (PRESENTACIÓN)
+   ========================================================= */
+.hero-container {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+/* Formas Poligonales Flotantes inspiradas en Species in Pieces */
+.hero-shape {
+  position: absolute;
+  opacity: 0.6;
+  transition: all 0.5s ease;
+}
+
+.shape-1 {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, var(--color-rosa-vibrante), var(--color-verde-oliva)); /* Propiedad 4: linear-gradient */
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); /* Propiedad 5: clip-path */
+  top: 10%;
+  left: 5%;
+  filter: blur(1px); /* Propiedad 6: filter */
+}
+
+.shape-2 {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(45deg, var(--color-verde-musgo), var(--color-rosa-vibrante));
+  clip-path: polygon(20% 0%, 80% 10%, 100% 90%, 0% 100%);
+  bottom: 10%;
+  right: 8%;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  background: rgba(43, 58, 39, 0.4);
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Propiedad 7: box-shadow */
+  border: 1px solid rgba(255, 102, 178, 0.3);
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  color: var(--color-rosa-vibrante);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero-text p {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  color: #d2ded0;
+}
+
+.btn-deconstruido {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: var(--color-rosa-vibrante);
+  color: var(--color-negro);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+  transition: all 0.3s ease;
+}
+
+.btn-deconstruido:hover {
+  background-color: var(--color-rosa-pastel);
+  transform: scale(1.05) rotate(-1deg);
+}
+
+/* =========================================================
+   3. SECCIONES PROPIAS DE TEXTO / BLOQUES
+   ========================================================= */
+.seccion-bloque {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  background: rgba(18, 20, 17, 0.9);
+  border-left: 5px solid var(--color-rosa-vibrante);
+  border-radius: 4px;
+}
+
+.seccion-bloque h2 {
+  font-size: 2.2rem;
+  color: var(--color-rosa-pastel);
+  margin-bottom: 1rem;
+}
+
+.seccion-bloque p {
+  font-size: 1.2rem;
+}
+
+/* =========================================================
+   4. SECCIÓN PRINCIPAL: ENTREGAS P5JS
+   ========================================================= */
+.seccion-proyectos {
+  padding: 4rem 5%;
+}
+
+.subtitulo-entregas {
+  font-size: 2.8rem;
+  text-align: center;
+  color: var(--color-rosa-vibrante);
+  margin-bottom: 3rem;
+  letter-spacing: 1px;
+}
+
+/* Grilla CSS Grid (Layout personalizado) */
+.grilla-proyectos {
+  display: grid; /* Propiedad 8: display grid */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Propiedad 9: grid-template-columns */
+  gap: 2.5rem; /* Propiedad 10: gap */
+}
+
+/* Tarjetas Deconstruidas de los Proyectos */
+.card-proyecto {
+  background: rgba(43, 58, 39, 0.3);
+  border: 1px solid var(--color-verde-oliva);
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-proyecto:hover {
+  border-color: var(--color-rosa-vibrante);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 25px rgba(255, 102, 178, 0.25);
+  background: rgba(43, 58, 39, 0.6);
+}
+
+/* Marco poligonal con efecto clip-path */
+.marco-poligonal {
+  width: 100%;
+  height: 180px;
+  background-color: var(--color-verde-musgo);
+  clip-path: polygon(0 0, 100% 5%, 95% 100%, 5% 95%);
+  transition: clip-path 0.4s ease, transform 0.4s ease;
+  overflow: hidden;
+}
+
+.card-proyecto:hover .marco-poligonal {
+  clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%); /* Deconstrucción al hacer hover */
+  transform: scale(1.02);
+}
+
+/* Imagen de simulación / Textura dentro de la tarjeta */
+.preview-img {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--color-rosa-vibrante), var(--color-verde-musgo));
+  mix-blend-mode: multiply; /* Propiedad 11: mix-blend-mode */
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.card-proyecto:hover .preview-img {
+  opacity: 1;
+}
+
+.info-proyecto {
+  margin-top: 1.2rem;
+}
+
+.info-proyecto h3 {
+  font-size: 1.6rem;
+  color: var(--color-rosa-pastel);
+  margin-bottom: 0.5rem;
+}
+
+.info-proyecto p {
+  font-size: 1.1rem;
+  color: var(--color-blanco);
+  margin-bottom: 1.2rem;
+}
+
+.link-p5 {
+  display: inline-block;
+  color: var(--color-rosa-vibrante);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.link-p5:hover {
+  color: var(--color-blanco);
+  transform: translateX(5px);
+}
+
+/* =========================================================
+   5. FOOTER / CONTACTO
+   ========================================================= */
+.footer-container {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--color-negro);
+  border-top: 2px solid var(--color-verde-oliva);
+  margin-top: 4rem;
+}
+
+.footer-container h2 {
+  font-size: 2.2rem;
+  color: var(--color-rosa-vibrante);
+  margin-bottom: 1rem;
+}
+
+.btn-wiki {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.8rem;
+  background: transparent;
+  border: 2px solid var(--color-rosa-vibrante);
+  color: var(--color-rosa-vibrante);
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-wiki:hover {
+  background: var(--color-rosa-vibrante);
+  color: var(--color-negro);
+}
+
+/* =========================================================
+   6. RESPONSIVIDAD (@media Queries - Propiedad 12)
+   ========================================================= */
+@media (max-width: 768px) {
+  .header-nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .subtitulo-entregas {
+    font-size: 2.2rem;
+  }
+
+  .shape-1, .shape-2 {
+    display: none; /* Ocultar formas pesadas en móviles */
+  }
+}
