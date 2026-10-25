@@ -1,14 +1,20 @@
 /* =========================================================
-   ESTILOS GENERALES Y VARIABLES (Verde / Rosado / Camo)
+   1. IMPORTACIÓN DE TIPOGRAFÍAS (Streetwear Aesthetic)
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Syne:wght@700;800&display=swap');
+
+/* =========================================================
+   2. VARIABLES Y PALETA CROMÁTICA (Alto Contraste)
    ========================================================= */
 :root {
-  --color-rosa-vibrante: #ff66b2;
-  --color-rosa-pastel: #f7a8b8;
-  --color-verde-musgo: #2b3a27;
-  --color-verde-oliva: #4d6639;
-  --color-negro: #121411;
-  --color-blanco: #f4f6f3;
-  --fuente-principal: 'Alegreya Sans', sans-serif;
+  --color-rosa-vibrante: #ff3399; /* Rosa neón streetwear para máximo contraste */
+  --color-rosa-pastel: #ff99cc;
+  --color-verde-musgo: #1e281b;
+  --color-verde-oliva: #3f5431;
+  --color-negro: #0d0f0c; /* Fondo extra oscuro */
+  --color-blanco: #ffffff;
+  --fuente-titulos: 'Syne', sans-serif; /* Tipografía urbana / display */
+  --fuente-cuerpo: 'Alegreya Sans', sans-serif;
 }
 
 * {
@@ -17,8 +23,12 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: var(--fuente-principal);
+  font-family: var(--fuente-cuerpo);
   background-color: var(--color-negro);
   color: var(--color-blanco);
   overflow-x: hidden;
@@ -26,7 +36,7 @@ body {
   line-height: 1.6;
 }
 
-/* Textura de fondo tipo Camuflaje/Ramaje vegetal mediante SVG en Data-URI */
+/* Textura de fondo camuflaje rosa/verde */
 .camo-overlay {
   position: fixed;
   top: 0;
@@ -35,223 +45,267 @@ body {
   height: 100vh;
   background-image: radial-gradient(var(--color-verde-musgo) 15%, transparent 16%),
                     radial-gradient(var(--color-rosa-vibrante) 15%, transparent 16%),
-                    linear-gradient(45deg, rgba(43, 58, 39, 0.4) 25%, transparent 25%),
-                    linear-gradient(-45deg, rgba(255, 102, 178, 0.2) 25%, transparent 25%);
+                    linear-gradient(45deg, rgba(30, 40, 27, 0.6) 25%, transparent 25%),
+                    linear-gradient(-45deg, rgba(255, 51, 153, 0.25) 25%, transparent 25%);
   background-size: 60px 60px, 80px 80px, 120px 120px, 100px 100px;
   background-position: 0 0, 30px 30px, 0 0, 40px 40px;
-  opacity: 0.25;
+  opacity: 0.2;
   z-index: -1;
   pointer-events: none;
-  filter: contrast(130%);
+  filter: contrast(140%);
 }
 
 /* =========================================================
-   1. NAVEGACIÓN (HEADER)
+   3. NAVEGACIÓN (HEADER RESPONSIVO)
    ========================================================= */
 .header-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 5%;
-  background: rgba(18, 20, 17, 0.85);
-  backdrop-filter: blur(10px); /* Propiedad 1: backdrop-filter */
+  padding: 1.2rem 6%;
+  background: rgba(13, 15, 12, 0.92);
+  backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 2px solid var(--color-rosa-vibrante);
+  border-bottom: 3px solid var(--color-rosa-vibrante);
 }
 
 .logo {
+  font-family: var(--fuente-titulos);
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--color-rosa-vibrante);
   text-transform: uppercase;
   letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(255, 51, 153, 0.5);
+}
+
+.header-nav nav {
+  display: flex;
+  gap: 1.5rem;
 }
 
 .header-nav nav a {
   color: var(--color-blanco);
   text-decoration: none;
-  margin-left: 1.5rem;
-  font-size: 1.1rem;
-  font-weight: 400;
-  transition: color 0.3s ease, transform 0.3s ease; /* Propiedad 2: transition */
-  display: inline-block;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
 }
 
 .header-nav nav a:hover {
-  color: var(--color-rosa-pastel);
-  transform: translateY(-2px); /* Propiedad 3: transform */
+  color: var(--color-rosa-vibrante);
+  transform: translateY(-2px);
 }
 
 /* =========================================================
-   2. HERO (PRESENTACIÓN)
+   4. HERO SECTION (BANNER STREETWEAR)
    ========================================================= */
 .hero-container {
-  min-height: 70vh;
+  min-height: 75vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 4rem 2rem;
+  padding: 4rem 1.5rem;
   text-align: center;
 }
 
-/* Formas Poligonales Flotantes inspiradas en Species in Pieces */
 .hero-shape {
   position: absolute;
-  opacity: 0.6;
+  opacity: 0.5;
   transition: all 0.5s ease;
 }
 
 .shape-1 {
-  width: 250px;
-  height: 250px;
-  background: linear-gradient(135deg, var(--color-rosa-vibrante), var(--color-verde-oliva)); /* Propiedad 4: linear-gradient */
-  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); /* Propiedad 5: clip-path */
-  top: 10%;
-  left: 5%;
-  filter: blur(1px); /* Propiedad 6: filter */
+  width: 280px;
+  height: 280px;
+  background: linear-gradient(135deg, var(--color-rosa-vibrante), var(--color-verde-oliva));
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  top: 8%;
+  left: 4%;
+  filter: blur(1px);
 }
 
 .shape-2 {
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   background: linear-gradient(45deg, var(--color-verde-musgo), var(--color-rosa-vibrante));
   clip-path: polygon(20% 0%, 80% 10%, 100% 90%, 0% 100%);
-  bottom: 10%;
-  right: 8%;
+  bottom: 8%;
+  right: 5%;
 }
 
 .hero-text {
   position: relative;
   z-index: 2;
-  max-width: 800px;
-  background: rgba(43, 58, 39, 0.4);
-  padding: 3rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Propiedad 7: box-shadow */
-  border: 1px solid rgba(255, 102, 178, 0.3);
+  max-width: 850px;
+  background: rgba(30, 40, 27, 0.75);
+  padding: 3.5rem 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+  border: 2px solid var(--color-rosa-vibrante);
+  backdrop-filter: blur(6px);
 }
 
 .hero-text h1 {
-  font-size: 3.5rem;
+  font-family: var(--fuente-titulos);
+  font-size: 4rem;
+  font-weight: 800;
   color: var(--color-rosa-vibrante);
-  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 15px rgba(255, 51, 153, 0.6);
+}
+
+.hero-subtitulo {
+  font-family: var(--fuente-titulos);
+  font-size: 2rem;
   font-weight: 700;
+  color: var(--color-rosa-pastel);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 1.5rem;
 }
 
 .hero-text p {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
+  font-weight: 400;
   margin-bottom: 2rem;
-  color: #d2ded0;
+  color: #f0f5ef;
 }
 
 .btn-deconstruido {
   display: inline-block;
-  padding: 0.8rem 2rem;
+  padding: 1rem 2.5rem;
   background-color: var(--color-rosa-vibrante);
   color: var(--color-negro);
   text-decoration: none;
-  font-weight: 700;
-  font-size: 1.2rem;
+  font-family: var(--fuente-titulos);
+  font-weight: 800;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
   transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 51, 153, 0.4);
 }
 
 .btn-deconstruido:hover {
   background-color: var(--color-rosa-pastel);
-  transform: scale(1.05) rotate(-1deg);
+  transform: scale(1.06) rotate(-1deg);
 }
 
 /* =========================================================
-   3. SECCIONES PROPIAS DE TEXTO / BLOQUES
+   5. SECCIONES SOBRE EL CURSO Y PERFIL (BLOQUES)
    ========================================================= */
 .seccion-bloque {
-  max-width: 1000px;
+  max-width: 1050px;
   margin: 4rem auto;
-  padding: 2.5rem;
-  background: rgba(18, 20, 17, 0.9);
-  border-left: 5px solid var(--color-rosa-vibrante);
-  border-radius: 4px;
+  padding: 3rem;
+  background: rgba(13, 15, 12, 0.92);
+  border-left: 6px solid var(--color-rosa-vibrante);
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 51, 153, 0.2);
 }
 
 .seccion-bloque h2 {
-  font-size: 2.2rem;
-  color: var(--color-rosa-pastel);
-  margin-bottom: 1rem;
+  font-family: var(--fuente-titulos);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-rosa-vibrante);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
 }
 
 .seccion-bloque p {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+  color: #ffffff;
 }
 
 /* =========================================================
-   4. SECCIÓN PRINCIPAL: ENTREGAS P5JS
+   6. SECCIÓN TARJETAS PROYECTOS P5.JS
    ========================================================= */
 .seccion-proyectos {
-  padding: 4rem 5%;
+  padding: 4rem 6%;
 }
 
 .subtitulo-entregas {
-  font-size: 2.8rem;
+  font-family: var(--fuente-titulos);
+  font-size: 3.2rem;
+  font-weight: 800;
   text-align: center;
   color: var(--color-rosa-vibrante);
-  margin-bottom: 3rem;
-  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 3.5rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px rgba(255, 51, 153, 0.4);
 }
 
-/* Grilla CSS Grid (Layout personalizado) */
 .grilla-proyectos {
-  display: grid; /* Propiedad 8: display grid */
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Propiedad 9: grid-template-columns */
-  gap: 2.5rem; /* Propiedad 10: gap */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
 }
 
-/* Tarjetas Deconstruidas de los Proyectos */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .card-proyecto {
-  background: rgba(43, 58, 39, 0.3);
-  border: 1px solid var(--color-verde-oliva);
+  background: rgba(30, 40, 27, 0.65);
+  border: 2px solid var(--color-verde-oliva);
   border-radius: 8px;
-  overflow: hidden;
   padding: 1.5rem;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.4s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.card-proyecto:hover {
+.card-link:hover .card-proyecto {
   border-color: var(--color-rosa-vibrante);
-  transform: translateY(-8px);
-  box-shadow: 0 15px 25px rgba(255, 102, 178, 0.25);
-  background: rgba(43, 58, 39, 0.6);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(255, 51, 153, 0.35);
+  background: rgba(30, 40, 27, 0.9);
 }
 
-/* Marco poligonal con efecto clip-path */
 .marco-poligonal {
   width: 100%;
-  height: 180px;
+  height: 220px;
   background-color: var(--color-verde-musgo);
   clip-path: polygon(0 0, 100% 5%, 95% 100%, 5% 95%);
   transition: clip-path 0.4s ease, transform 0.4s ease;
   overflow: hidden;
 }
 
-.card-proyecto:hover .marco-poligonal {
-  clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%); /* Deconstrucción al hacer hover */
-  transform: scale(1.02);
+.card-link:hover .marco-poligonal {
+  clip-path: polygon(8% 0%, 92% 0%, 100% 100%, 0% 100%);
 }
 
-/* Imagen de simulación / Textura dentro de la tarjeta */
-.preview-img {
+.preview-img-file {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--color-rosa-vibrante), var(--color-verde-musgo));
-  mix-blend-mode: multiply; /* Propiedad 11: mix-blend-mode */
-  opacity: 0.85;
-  transition: opacity 0.3s ease;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-.card-proyecto:hover .preview-img {
-  opacity: 1;
+.card-link:hover .preview-img-file {
+  transform: scale(1.08);
+  filter: brightness(1.15) contrast(1.1);
 }
 
 .info-proyecto {
@@ -259,84 +313,238 @@ body {
 }
 
 .info-proyecto h3 {
-  font-size: 1.6rem;
+  font-family: var(--fuente-titulos);
+  font-size: 1.7rem;
+  font-weight: 700;
   color: var(--color-rosa-pastel);
   margin-bottom: 0.5rem;
 }
 
 .info-proyecto p {
-  font-size: 1.1rem;
-  color: var(--color-blanco);
+  font-size: 1.15rem;
+  color: #f0f5ef;
   margin-bottom: 1.2rem;
 }
 
-.link-p5 {
+.btn-p5-directo {
   display: inline-block;
+  font-family: var(--fuente-titulos);
   color: var(--color-rosa-vibrante);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.1rem;
-  transition: transform 0.2s ease, color 0.2s ease;
+  font-weight: 800;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.link-p5:hover {
+.card-link:hover .btn-p5-directo {
   color: var(--color-blanco);
-  transform: translateX(5px);
+  transform: translateX(8px);
 }
 
 /* =========================================================
-   5. FOOTER / CONTACTO
+   7. SECCIÓN FICHA CURRICULAR Y TAGS
    ========================================================= */
-.footer-container {
-  text-align: center;
-  padding: 4rem 2rem;
-  background: var(--color-negro);
-  border-top: 2px solid var(--color-verde-oliva);
-  margin-top: 4rem;
-}
-
-.footer-container h2 {
-  font-size: 2.2rem;
-  color: var(--color-rosa-vibrante);
-  margin-bottom: 1rem;
-}
-
-.btn-wiki {
-  display: inline-block;
+.perfil-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 2rem;
   margin-top: 1.5rem;
-  padding: 0.8rem 1.8rem;
-  background: transparent;
-  border: 2px solid var(--color-rosa-vibrante);
+}
+
+.perfil-info, .perfil-enfoque {
+  background: rgba(30, 40, 27, 0.5);
+  padding: 2rem;
+  border: 1px solid var(--color-verde-oliva);
+  border-radius: 8px;
+}
+
+.perfil-info h3, .perfil-enfoque h3 {
+  font-family: var(--fuente-titulos);
   color: var(--color-rosa-vibrante);
-  text-decoration: none;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--color-rosa-vibrante);
+  padding-bottom: 0.4rem;
+}
+
+.lista-ficha {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-ficha li {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: #ffffff;
+}
+
+.lista-ficha strong {
+  color: var(--color-rosa-pastel);
+}
+
+.tags-herramientas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.tag-skill {
+  background: var(--color-verde-musgo);
+  color: var(--color-rosa-pastel);
+  border: 1px solid var(--color-rosa-vibrante);
+  padding: 0.5rem 1rem;
+  font-family: var(--fuente-titulos);
+  font-size: 1rem;
   font-weight: 700;
-  border-radius: 4px;
+  clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
   transition: all 0.3s ease;
 }
 
-.btn-wiki:hover {
+.tag-skill:hover {
+  transform: scale(1.08);
   background: var(--color-rosa-vibrante);
   color: var(--color-negro);
 }
 
 /* =========================================================
-   6. RESPONSIVIDAD (@media Queries - Propiedad 12)
+   8. FOOTER / CONTACTO Y REPOSICIÓN
    ========================================================= */
+.footer-container {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(13, 15, 12, 0.98);
+  border-top: 3px solid var(--color-rosa-vibrante);
+  margin-top: 5rem;
+}
+
+.footer-container h2 {
+  font-family: var(--fuente-titulos);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-rosa-vibrante);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.footer-container p {
+  font-size: 1.25rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.contenedor-botones-footer {
+  display: flex;
+  justify-content: center;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+}
+
+.btn-footer {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-family: var(--fuente-titulos);
+  font-size: 1.15rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+}
+
+.btn-casiopea {
+  background: var(--color-verde-musgo);
+  color: var(--color-rosa-pastel);
+  border: 2px solid var(--color-rosa-vibrante);
+}
+
+.btn-casiopea:hover {
+  background: var(--color-rosa-vibrante);
+  color: var(--color-negro);
+  transform: translateY(-3px) scale(1.04);
+}
+
+.btn-github {
+  background: var(--color-rosa-vibrante);
+  color: var(--color-negro);
+  border: 2px solid var(--color-rosa-vibrante);
+}
+
+.btn-github:hover {
+  background: var(--color-rosa-pastel);
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 8px 22px rgba(255, 51, 153, 0.5);
+}
+
+/* =========================================================
+   9. RESPONSIVIDAD TOTAL (@media Queries)
+   ========================================================= */
+@media (max-width: 900px) {
+  .hero-text h1 {
+    font-size: 3.2rem;
+  }
+  .subtitulo-entregas {
+    font-size: 2.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .header-nav {
     flex-direction: column;
     gap: 1rem;
+    padding: 1rem;
   }
-  
+
+  .header-nav nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .hero-container {
+    padding: 2rem 1rem;
+  }
+
+  .hero-text {
+    padding: 2rem 1.2rem;
+  }
+
   .hero-text h1 {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
+  }
+
+  .hero-subtitulo {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+  }
+
+  .seccion-bloque {
+    padding: 1.8rem 1.2rem;
+    margin: 2.5rem 1rem;
   }
 
   .subtitulo-entregas {
-    font-size: 2.2rem;
+    font-size: 2rem;
+  }
+
+  .grilla-proyectos {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
   }
 
   .shape-1, .shape-2 {
-    display: none; /* Ocultar formas pesadas en móviles */
+    display: none;
+  }
+
+  .contenedor-botones-footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-footer {
+    width: 100%;
+    max-width: 300px;
   }
 }
