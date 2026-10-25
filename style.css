@@ -1,11 +1,11 @@
-/* =========================================================
-   1. IMPORTACIÓN DE TIPOGRAFÍAS (Streetwear Aesthetic)
-   ========================================================= */
+/
+   1. IMPORTACIÓN DE TIPOGRAFÍAS
+  /
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Syne:wght@700;800&display=swap');
 
-/* =========================================================
+/*
    2. VARIABLES Y PALETA CROMÁTICA (Alto Contraste)
-   ========================================================= */
+  */
 :root {
   --color-rosa-vibrante: #ff3399; /* Rosa neón streetwear para máximo contraste */
   --color-rosa-pastel: #ff99cc;
@@ -55,9 +55,9 @@ body {
   filter: contrast(140%);
 }
 
-/* =========================================================
+/*
    3. NAVEGACIÓN (HEADER RESPONSIVO)
-   ========================================================= */
+   */
 .header-nav {
   display: flex;
   justify-content: space-between;
@@ -101,9 +101,9 @@ body {
   transform: translateY(-2px);
 }
 
-/* =========================================================
-   4. HERO SECTION (BANNER STREETWEAR)
-   ========================================================= */
+/* 
+   4. HERO SECTION (BANNER)
+   */
 .hero-container {
   min-height: 75vh;
   display: flex;
@@ -201,9 +201,9 @@ body {
   transform: scale(1.06) rotate(-1deg);
 }
 
-/* =========================================================
+/* 
    5. SECCIONES SOBRE EL CURSO Y PERFIL (BLOQUES)
-   ========================================================= */
+    */
 .seccion-bloque {
   max-width: 1050px;
   margin: 4rem auto;
@@ -232,9 +232,9 @@ body {
   color: #ffffff;
 }
 
-/* =========================================================
+/* 
    6. SECCIÓN TARJETAS PROYECTOS P5.JS
-   ========================================================= */
+    */
 .seccion-proyectos {
   padding: 4rem 6%;
 }
@@ -342,9 +342,9 @@ body {
   transform: translateX(8px);
 }
 
-/* =========================================================
+/* 
    7. SECCIÓN FICHA CURRICULAR Y TAGS
-   ========================================================= */
+   */
 .perfil-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
@@ -409,9 +409,9 @@ body {
   color: var(--color-negro);
 }
 
-/* =========================================================
+/*
    8. FOOTER / CONTACTO Y REPOSICIÓN
-   ========================================================= */
+   */
 .footer-container {
   text-align: center;
   padding: 4rem 2rem;
@@ -479,9 +479,9 @@ body {
   box-shadow: 0 8px 22px rgba(255, 51, 153, 0.5);
 }
 
-/* =========================================================
-   9. RESPONSIVIDAD TOTAL (@media Queries)
-   ========================================================= */
+/* 
+   9. RESPONSIVIDAD TOTAL 
+    */
 @media (max-width: 900px) {
   .hero-text h1 {
     font-size: 3.2rem;
