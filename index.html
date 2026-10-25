@@ -10,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   
+  <!-- Librería p5.js para canvas interactivos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -48,7 +51,7 @@
     <p>El resultado es un sitio web donde organizo, documento y publico mis exploraciones.</p>
   </section>
 
-  <!-- Sección de Entregas p5.js -->
+  <!-- Sección de Entregas p5.js con Canvas Interactivos -->
   <section id="entregas" class="seccion-proyectos">
     <h2 class="subtitulo-entregas">Mis proyectos p5.js</h2>
     
@@ -58,7 +61,7 @@
       <a href="https://editor.p5js.org/Florencia.Valdivia_/full/m3AGBbdvl" target="_blank" rel="noopener" class="card-link">
         <article class="card-proyecto">
           <div class="marco-poligonal">
-            <img src="proyecto1.PNG" alt="Vista previa 1: Certified lover boy" class="preview-img-file">
+            <div id="p5-canvas-1" class="interactive-preview"></div>
           </div>
           <div class="info-proyecto">
             <h3>1: Certified lover boy</h3>
@@ -72,7 +75,7 @@
       <a href="https://editor.p5js.org/Florencia.Valdivia_/full/8gtJY4LKv" target="_blank" rel="noopener" class="card-link">
         <article class="card-proyecto">
           <div class="marco-poligonal">
-            <img src="proyecto2.PNG" alt="Vista previa 2: Sin boleto" class="preview-img-file">
+            <div id="p5-canvas-2" class="interactive-preview"></div>
           </div>
           <div class="info-proyecto">
             <h3>2: Sin boleto</h3>
@@ -86,7 +89,7 @@
       <a href="https://editor.p5js.org/Florencia.Valdivia_/full/LU9-DSkjA" target="_blank" rel="noopener" class="card-link">
         <article class="card-proyecto">
           <div class="marco-poligonal">
-            <img src="proyecto3.PNG" alt="Vista previa 3: Juego de feria" class="preview-img-file">
+            <div id="p5-canvas-3" class="interactive-preview"></div>
           </div>
           <div class="info-proyecto">
             <h3>3: Juego de feria</h3>
@@ -100,7 +103,7 @@
       <a href="https://editor.p5js.org/Florencia.Valdivia_/full/2CF3L9Mal" target="_blank" rel="noopener" class="card-link">
         <article class="card-proyecto">
           <div class="marco-poligonal">
-            <img src="proyecto4.PNG" alt="Vista previa 4: Cascada telar" class="preview-img-file">
+            <div id="p5-canvas-4" class="interactive-preview"></div>
           </div>
           <div class="info-proyecto">
             <h3>4: Cascada telar</h3>
@@ -114,11 +117,11 @@
       <a href="https://editor.p5js.org/FernandaPerez/full/8AlsmUD7f" target="_blank" rel="noopener" class="card-link">
         <article class="card-proyecto">
           <div class="marco-poligonal">
-            <img src="proyecto5.PNG" alt="Vista previa 5: Fluctuación luminica" class="preview-img-file">
+            <div id="p5-canvas-5" class="interactive-preview"></div>
           </div>
           <div class="info-proyecto">
             <h3>5: Fluctuación luminica</h3>
-            <p>Manipulación del color, opacidades y luminiscencia vectorial. Trabajo final en duplas.</p>
+            <p>Manipulación del color, opacidades y luminiscencia vectorial.</p>
             <span class="btn-p5-directo">Abrir simulación p5.js &rarr;</span>
           </div>
         </article>
@@ -174,6 +177,9 @@
       </a>
     </div>
   </footer>
+
+  <!-- Scripts de las iteraciones generativas p5.js -->
+  <script src="previews.js"></script>
 
 </body>
 </html>
