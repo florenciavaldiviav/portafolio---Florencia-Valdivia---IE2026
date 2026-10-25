@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio IE 2026 - Espesor de luz contenida</title>
+  <title>Imagen Escrita — Portafolio 2026</title>
   
-  <!-- Tipografía Alegreya Sans -->
+  <!-- Tipografías: Syne (Streetwear Display) y Alegreya Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
 </head>
@@ -21,33 +21,36 @@
   <header class="header-nav">
     <div class="logo">Portafolio IE 2026</div>
     <nav>
-      <a href="#concepto">Concepto</a>
-      <a href="#entregas">Mis entregas p5js</a>
-      <a href="#desglose">Desglose</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#concepto">Sobre el Curso</a>
+      <a href="#entregas">Mis Proyectos</a>
+      <a href="#desglose">Sobre Mí</a>
+      <a href="#contacto">Repositorio</a>
     </nav>
   </header>
 
-  <!-- Hero principal deconstruido -->
+  <!-- Hero principal deconstruido (Banner Streetwear) -->
   <section class="hero-container">
     <div class="hero-shape shape-1"></div>
     <div class="hero-shape shape-2"></div>
     <div class="hero-text">
-      <h1>Portafolio IE 2026</h1>
-      <p>Espesor de luz contenida: Exploración visual e interactiva basada en la deconstrucción geométrica, texturas orgánicas y programación creativa con p5.js.</p>
-      <a href="#entregas" class="btn-deconstruido">Explorar Entregas</a>
+      <h1>Imagen Escrita</h1>
+      <p class="hero-subtitulo">Portafolio 2026</p>
+      <p>Proyectos creativos en base a códigos en p5.js. Escuela de Arquitectura y diseño, PUCV, 2026.</p>
+      <a href="#entregas" class="btn-deconstruido">Explorar Proyectos</a>
     </div>
   </section>
 
-  <!-- Componente Propio 1: Manifiesto cromático y deconstrucción -->
+  <!-- Componente Propio 1: Sobre el curso -->
   <section id="concepto" class="seccion-bloque">
-    <h2>01. Concepto y Textura Visual</h2>
-    <p>El proyecto combina la estética fragmentada de polígonos (*In Pieces*) con un choque cromático entre lo natural y lo sintético: tonalidades de verde musgo, acentos de rosado intenso y tramas de camuflaje vegetal en capas.</p>
+    <h2>01. Sobre el curso</h2>
+    <p>En esta asignatura exploro el arte generativo, el creative coding y el desarrollo web como medios de expresión visual e interactiva. Trabajo con p5.js, HTML y CSS para crear experiencias digitales basadas en reglas, comportamientos y relaciones.</p>
+    <p>Entiendo el código como material de diseño y como una forma de escritura visual: primero conceptualizo y formulo una lógica, y luego la traduzco en prototipos que refino de manera iterativa. Uso la inteligencia artificial como apoyo para explorar alternativas y depurar, sin reemplazar mis decisiones formales, y me apropio del código leyéndolo, explicándolo y modificándolo.</p>
+    <p>El resultado es un sitio web donde organizo, documento y publico mis exploraciones.</p>
   </section>
 
   <!-- Sección de Entregas p5.js -->
   <section id="entregas" class="seccion-proyectos">
-    <h2 class="subtitulo-entregas">Mis entregas p5js</h2>
+    <h2 class="subtitulo-entregas">Mis proyectos p5.js</h2>
     
     <div class="grilla-proyectos">
 
@@ -55,12 +58,12 @@
       <a href="https://editor.p5js.org/Florencia.Valdivia_/full/m3AGBbdvl" target="_blank" rel="noopener" class="card-link">
         <article class="card-proyecto">
           <div class="marco-poligonal">
-            <div class="preview-img img-1"></div>
+            <img src="proyecto1.jpg" alt="Vista previa 1: Certified lover boy" class="preview-img-file">
           </div>
           <div class="info-proyecto">
             <h3>1: Certified lover boy</h3>
             <p>Exploración de formas generativas y ritmo visual desarrollado en p5.js.</p>
-            <span class="btn-p5-directo">Abrir en p5.js &rarr;</span>
+            <span class="btn-p5-directo">Abrir simulación p5.js &rarr;</span>
           </div>
         </article>
       </a>
@@ -69,12 +72,12 @@
       <a href="https://editor.p5js.org/Florencia.Valdivia_/full/8gtJY4LKv" target="_blank" rel="noopener" class="card-link">
         <article class="card-proyecto">
           <div class="marco-poligonal">
-            <div class="preview-img img-2"></div>
+            <img src="proyecto2.png" alt="Vista previa 2: Sin boleto" class="preview-img-file">
           </div>
           <div class="info-proyecto">
             <h3>2: Sin boleto</h3>
             <p>Iteraciones de movimiento y captura de interacción con librerías p5.js.</p>
-            <span class="btn-p5-directo">Abrir en p5.js &rarr;</span>
+            <span class="btn-p5-directo">Abrir simulación p5.js &rarr;</span>
           </div>
         </article>
       </a>
@@ -83,12 +86,12 @@
       <a href="https://editor.p5js.org/Florencia.Valdivia_/full/LU9-DSkjA" target="_blank" rel="noopener" class="card-link">
         <article class="card-proyecto">
           <div class="marco-poligonal">
-            <div class="preview-img img-3"></div>
+            <img src="proyecto3.jpg" alt="Vista previa 3: Juego de feria" class="preview-img-file">
           </div>
           <div class="info-proyecto">
             <h3>3: Juego de feria</h3>
             <p>Mecánica interactiva y física simple programada en entorno web.</p>
-            <span class="btn-p5-directo">Abrir en p5.js &rarr;</span>
+            <span class="btn-p5-directo">Abrir simulación p5.js &rarr;</span>
           </div>
         </article>
       </a>
@@ -97,12 +100,12 @@
       <a href="https://editor.p5js.org/Florencia.Valdivia_/full/2CF3L9Mal" target="_blank" rel="noopener" class="card-link">
         <article class="card-proyecto">
           <div class="marco-poligonal">
-            <div class="preview-img img-4"></div>
+            <img src="proyecto4.jpg" alt="Vista previa 4: Cascada telar" class="preview-img-file">
           </div>
           <div class="info-proyecto">
             <h3>4: Cascada telar</h3>
             <p>Estructuras repetitivas y trama de código generativo en movimiento.</p>
-            <span class="btn-p5-directo">Abrir en p5.js &rarr;</span>
+            <span class="btn-p5-directo">Abrir simulación p5.js &rarr;</span>
           </div>
         </article>
       </a>
@@ -111,12 +114,12 @@
       <a href="https://editor.p5js.org/FernandaPerez/full/8AlsmUD7f" target="_blank" rel="noopener" class="card-link">
         <article class="card-proyecto">
           <div class="marco-poligonal">
-            <div class="preview-img img-5"></div>
+            <img src="proyecto5.jpg" alt="Vista previa 5: Fluctuación luminica" class="preview-img-file">
           </div>
           <div class="info-proyecto">
             <h3>5: Fluctuación luminica</h3>
             <p>Manipulación del color, opacidades y luminiscencia vectorial.</p>
-            <span class="btn-p5-directo">Abrir en p5.js &rarr;</span>
+            <span class="btn-p5-directo">Abrir simulación p5.js &rarr;</span>
           </div>
         </article>
       </a>
@@ -124,19 +127,52 @@
     </div>
   </section>
 
-  <!-- Componente Propio 2: Desglose Técnico -->
-  <section id="desglose" class="seccion-bloque">
-    <h2>02. Componente Poligonal / Desglose</h2>
-    <div class="caja-desglose">
-      <p>Cada tarjeta se deconstruye mediante la propiedad CSS <code>clip-path: polygon()</code>, rotando y cambiando sus esquinas al pasar el cursor (hover) para dar una sensación viva de fragmentación en pantalla.</p>
+  <!-- Componente Propio 2: Perfil & Detalles Curriculares -->
+  <section id="desglose" class="seccion-bloque perfil-contenedor">
+    <h2>02. Sobre mí & Ficha Académica</h2>
+    
+    <div class="perfil-grid">
+      <!-- Columna 1: Datos de Contexto -->
+      <div class="perfil-info">
+        <h3>Ficha Académica</h3>
+        <ul class="lista-ficha">
+          <li><strong>Asignatura:</strong> Imagen Escrita</li>
+          <li><strong>Nivel / Carrera:</strong> Segundo Año — Diseño</li>
+          <li><strong>Escuela:</strong> Escuela de Arquitectura y Diseño (e[ad])</li>
+          <li><strong>Universidad:</strong> Pontificia Universidad Católica de Valparaíso (PUCV)</li>
+          <li><strong>Año:</strong> 2026</li>
+        </ul>
+      </div>
+
+      <!-- Columna 2: Enfoque y Herramientas -->
+      <div class="perfil-enfoque">
+        <h3>Intereses & Enfoque Creativo</h3>
+        <p>Me interesa el diseño de interacción y de experiencia de usuario, con un enfoque centrado en las personas. Entiendo el diseño como una herramienta para identificar y responder a necesidades concretas, buscando que cada solución sea clara, accesible y significativa para quien la utiliza.</p>
+        
+        <div class="tags-herramientas">
+          <span class="tag-skill">HTML5</span>
+          <span class="tag-skill">CSS3</span>
+          <span class="tag-skill">p5.js</span>
+          <span class="tag-skill">Git / GitHub</span>
+          <span class="tag-skill">Ilustración / Diseño</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Componente Propio 3: Contacto / Pie de página -->
+  <!-- Componente Propio 3: Documentación & Repositorio -->
   <footer id="contacto" class="footer-container">
-    <h2>03. Documentación & Bitácora</h2>
-    <p>Proyecto Final - Asignatura Imagen Escrita 2026</p>
-    <a href="https://wiki.ead.pucv.cl" target="_blank" rel="noopener" class="btn-wiki">Ver Documentación en Casiopea Wiki</a>
+    <h2>03. Documentación y Repositorio</h2>
+    <p>Proyecto Final — Asignatura Imagen Escrita 2026. Escuela de Arquitectura y Diseño e[ad] PUCV.</p>
+    
+    <div class="contenedor-botones-footer">
+      <a href="https://wiki.ead.pucv.cl/Sitio_Web_IE_2026-_Florencia_Valdivia_Villegas" target="_blank" rel="noopener" class="btn-footer btn-casiopea">
+        Documentación en Casiopea &rarr;
+      </a>
+      <a href="https://github.com/tu-usuario/nombre-repositorio" target="_blank" rel="noopener" class="btn-footer btn-github">
+        Repositorio en GitHub &rarr;
+      </a>
+    </div>
   </footer>
 
 </body>
