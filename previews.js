@@ -1,12 +1,16 @@
-// Esperar a que el HTML esté completamente cargado para inicializar p5.js
-document.addEventListener('DOMContentLoaded', function() {
+// Función para inicializar los 5 canvas una vez cargadas las librerías
+function iniciarAnimacionesP5() {
+  if (typeof p5 === 'undefined') {
+    setTimeout(iniciarAnimacionesP5, 100);
+    return;
+  }
 
-  // 1. Certified Lover Boy (Ritmo orgánico y formas rosadas)
+  // 1. Certified Lover Boy
   new p5(function(p) {
     p.setup = function() {
-      let contenedor = p.select('#p5-canvas-1');
-      if (contenedor) {
-        let c = p.createCanvas(contenedor.width, 220);
+      let el = document.getElementById('p5-canvas-1');
+      if (el) {
+        let c = p.createCanvas(el.offsetWidth || 300, 220);
         c.parent('p5-canvas-1');
       }
     };
@@ -24,12 +28,12 @@ document.addEventListener('DOMContentLoaded', function() {
     };
   });
 
-  // 2. Sin Boleto (Red vectorial y movimiento)
+  // 2. Sin Boleto
   new p5(function(p) {
     p.setup = function() {
-      let contenedor = p.select('#p5-canvas-2');
-      if (contenedor) {
-        let c = p.createCanvas(contenedor.width, 220);
+      let el = document.getElementById('p5-canvas-2');
+      if (el) {
+        let c = p.createCanvas(el.offsetWidth || 300, 220);
         c.parent('p5-canvas-2');
       }
     };
@@ -48,12 +52,12 @@ document.addEventListener('DOMContentLoaded', function() {
     };
   });
 
-  // 3. Juego de Feria (Geometría lúdica interactiva)
+  // 3. Juego de Feria
   new p5(function(p) {
     p.setup = function() {
-      let contenedor = p.select('#p5-canvas-3');
-      if (contenedor) {
-        let c = p.createCanvas(contenedor.width, 220);
+      let el = document.getElementById('p5-canvas-3');
+      if (el) {
+        let c = p.createCanvas(el.offsetWidth || 300, 220);
         c.parent('p5-canvas-3');
       }
     };
@@ -75,12 +79,12 @@ document.addEventListener('DOMContentLoaded', function() {
     };
   });
 
-  // 4. Cascada Telar (Líneas verticales y trama textil)
+  // 4. Cascada Telar
   new p5(function(p) {
     p.setup = function() {
-      let contenedor = p.select('#p5-canvas-4');
-      if (contenedor) {
-        let c = p.createCanvas(contenedor.width, 220);
+      let el = document.getElementById('p5-canvas-4');
+      if (el) {
+        let c = p.createCanvas(el.offsetWidth || 300, 220);
         c.parent('p5-canvas-4');
       }
     };
@@ -99,12 +103,12 @@ document.addEventListener('DOMContentLoaded', function() {
     };
   });
 
-  // 5. Fluctuación Lumínica (Tramas de halftones verdes y negros)
+  // 5. Fluctuación Lumínica
   new p5(function(p) {
     p.setup = function() {
-      let contenedor = p.select('#p5-canvas-5');
-      if (contenedor) {
-        let c = p.createCanvas(contenedor.width, 220);
+      let el = document.getElementById('p5-canvas-5');
+      if (el) {
+        let c = p.createCanvas(el.offsetWidth || 300, 220);
         c.parent('p5-canvas-5');
       }
     };
@@ -124,5 +128,11 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     };
   });
+}
 
-});
+// Ejecutar la función cuando la ventana termine de cargar
+if (document.readyState === 'complete') {
+  iniciarAnimacionesP5();
+} else {
+  window.addEventListener('load', iniciarAnimacionesP5);
+}
